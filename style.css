@@ -4,11 +4,12 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #0F0F0F;
+  background: #0f0f0f;
 }
 
 .container {
@@ -30,7 +31,7 @@ html, body {
   left: 0;
   width: 5px;
   height: 5px;
-  background: #FFF;
+  background: #fff;
   border-radius: 100%;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
