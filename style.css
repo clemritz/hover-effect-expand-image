@@ -61,3 +61,70 @@ body {
   object-fit: contain;
   transform: scale(2);
 }
+
+.centered-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 46%;
+}
+
+.centered-link a {
+  text-decoration: none;
+  /* text-decoration-skip-ink: none;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 4px; */
+  color: #f1f1f1;
+  font-family: "Mitera";
+  font-size: 1em;
+}
+
+@font-face {
+  font-family: "Brier";
+  src: url("fonts/7\ Brier/Brier-Regular.otf");
+}
+
+@font-face {
+  font-family: "Mitera";
+  src: url("fonts/25\ Mitera/Mitera Regular.otf");
+}
+
+button {
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+button:focus,
+button:hover {
+  color: #fff;
+}
+
+button:focus:after,
+button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
