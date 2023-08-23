@@ -45,7 +45,7 @@ h1 {
   height: 150px;
 }
 
-.cosmos-item {
+.cosmic-item {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,7 +57,7 @@ h1 {
   transform: scale(0);
 }
 
-.cosmos-item img {
+.cosmic-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
