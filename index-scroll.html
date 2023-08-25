@@ -1,37 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style-scroll.css">
-  <title>@scroll</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-scroll.css" />
+    <title>@scroll</title>
+  </head>
+  <body>
+    <div class="gallery">
+      <ul class="cards">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
 
-  <div class="gallery">
-    <ul class="cards">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
 
-  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.co/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="script-scroll.js"></script>
-</body>
+      let iteration = 0;
+      const spacing = 0.05,
+        snap = gsap.utils.snap(spacing),
+        cards = gsap.utils.toArray(".cards li"),
+        seamlessLoop = buildSeamlessLoop(cards, spacing),
+        scrub = gsap.to(seamlessLoop, {
+          totalTime: 0,
+          duration: 0.5,
+          ease: "power3",
+        });
+
+      trigger = ScrollTrigger.create({
+        start: 0,
+        onUpdate(self) {
+          if (self.progress === 1 && self.direction > 0 && !self.wrapping) {
+            wrapForward(self);
+          } else if (
+            self.progress < 1e-5 &&
+            self.direction < 0 &&
+            !self.wrapping
+          ) {
+            wrapBackward(self);
+          } else {
+            scrub.vars.totalTime = snap(
+              (iteration + self.progress) * seamlessLoop.duration()
+            );
+            scrub.invalidate().restart();
+            self.wrapping = false;
+          }
+        },
+        end: "+=3000",
+        pin: ".gallery",
+      });
+
+      function wrapForward(trigger) {
+        iteration ++;
+        trigger.wrapping = true;
+        trigger.scroll(trigger.start + 1);
+      }
+
+      function wrapBackward(trigger) {
+        iteration--;
+        if (iteration < 0) {
+          iteration = 9;
+          seamlessLoop.totalTime (
+            seamlessLoop.totalTime() + seamlessLoop.duration() * 10
+          ),
+          scrub.pause();
+        }
+        trigger.wrapping = true;
+        trigger.scroll(trigger.end - 1);
+      }
+
+      function buildSeamlessLoop(items, spacing) {
+        let overlap = Math.cell((1 / spacing) * 2),
+        startTime = items.length * spacing + 0.5,
+        loopTime = (items.length + overlap)  * spacing + 1,
+      }
+
+    </script>
+  </body>
 </html>
