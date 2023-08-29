@@ -18,13 +18,14 @@ body {
 
 h1 {
   position: absolute;
+  text-transform: uppercase;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   font-family: "Mitera";
   color: #FFF;
-  font-size: 22px;
+  font-size: 1em;
   margin: 0;
   z-index: 2;
 }
