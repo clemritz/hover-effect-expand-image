@@ -104,3 +104,21 @@ li:nth-child(17) {
   background: url("./images/img17.avif") no-repeat 50% 50%;
   background-size: cover;
 }
+
+.scroll-text {
+  position: fixed;
+  text-align: start;
+  padding: 10px;
+  margin-left: 50px;
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  font-family: "Mitera";
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+@font-face {
+  font-family: "Mitera";
+  src: url("fonts/25\ Mitera/Mitera Regular.otf");
+}
