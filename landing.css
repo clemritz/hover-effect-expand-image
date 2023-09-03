@@ -106,7 +106,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #0f0f0f;
 }
 
 .container h1 {
@@ -114,4 +114,5 @@ html, body {
   font-weight: 400;
   font-size: 7.5rem;
   letter-spacing: -0.5rem;
+  color: #F1F1F1;
 }
