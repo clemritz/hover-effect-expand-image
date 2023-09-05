@@ -66,3 +66,66 @@ h1 {
   transition: background-color 0.5s, color 0.5s;
   cursor: pointer;
 }
+
+.card-img {
+  width: 70px;
+  min-width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: inline-block;
+}
+
+.card-text {
+  width: 100%;
+  margin-left: 16px;
+}
+
+.card-title {
+  margin: 4px 0;
+}
+
+.card-info {
+  color: #8f8f8e
+}
+
+.toggle {
+  position: relative;
+  justify-content: flex-end;
+  display: none;
+}
+
+.toggle button {
+  border: none;
+  outline: none;
+  background: #2a2a2a;
+  color: #fff;
+  margin: 0 1em;
+  padding: 10px 16px 12px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #fff;
+  color: #2a2a2a;
+}
+
+#card-1 {
+  top: 0;
+}
+
+#card-2 {
+  top: -100px;
+}
+
+#card-3 {
+  top: -200px;
+}
