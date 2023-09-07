@@ -28,7 +28,7 @@
       </div>
       <div class="container">
         <div class="cards">
-          <div class="card" id="card-1">
+          <div class="card toggle-card" id="card-1">
             <div class="card-img">
               <img src="./images/img1.avif" alt="" />
             </div>
@@ -37,7 +37,7 @@
               <div class="card-info">Lorem ipsum dolor sit amet.</div>
             </div>
           </div>
-          <div class="card" id="card-2">
+          <div class="card toggle-card" id="card-2">
             <div class="card-img">
               <img src="./images/img9.avif" alt="" />
             </div>
@@ -46,7 +46,7 @@
               <div class="card-info">Lorem ipsum dolor sit amet.</div>
             </div>
           </div>
-          <div class="card" id="card-3">
+          <div class="card toggle-card" id="card-3">
             <div class="card-img">
               <img src="./images/img14.avif" alt="" />
             </div>
@@ -65,6 +65,8 @@
       const cards = document.querySelectorAll(".card");
       const toggleDiv = document.querySelector(".toggle");
       const siteContent = document.querySelector(".site-content");
+      const toggleCards = document.querySelectorAll(".toggle-card");
+      const background = document.querySelector(".site-content");
 
       let isCardOpen = false;
 
@@ -83,49 +85,14 @@
             ease: "power4.inOut",
           });
 
-          gsap.to(siteContent, {
-            filter: "blur(20px)",
+          gsap.to(background, {
+            filter: "blur(10px)",
             duration: 0.75,
             ease: "power4.inOut",
+            target: background,
           });
 
           isCardOpen = true;
-        }
-      });
-
-      toggleButton.addEventListener("click", () => {
-        if (isCardOpen) {
-          gsap.to("#card-1", {
-            top: "0px",
-            duration: 1,
-            ease: "power4.inOut",
-          });
-          gsap.to("#card-2", {
-            top: "-100px",
-            duration: 1,
-            ease: "power4.inOut",
-          });
-          gsap.to("#card-3", {
-            top: "-200px",
-            duration: 1,
-            ease: "power4.inOut",
-          });
-
-          gsap.to(toggleDiv, {
-            delay: 0,
-            display: "none",
-            opacity: 0,
-            duration: 0.4,
-            ease: "power4.inOut",
-          });
-
-          gsap.to(siteContent, {
-            filter: "blur(0px)",
-            duration: 1,
-            ease: "power4.inOut",
-          });
-
-          isCardOpen = false;
         }
       });
     </script>
