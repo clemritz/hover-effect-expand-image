@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@flexbox</title>
+    <link rel="stylesheet" href="flexbox.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row- row-1 border-bottom">
+        <div class="brand-name flex-center border-right">
+          <div class="header">
+            <h1>open day</h1>
+          </div>
+        </div>
+        <div class="brand-contact flex-center">
+          <div class="contact-container">
+            <p>Monday</p>
+            <p>17:00</p>
+            <p>21 Strom Street</p>
+          </div>
+        </div>
+      </div>
+      <div class="row row-2 border-bottom">
+        <div class="hero-copy border-right">
+          <div class="i-row i-row1">
+            <div class="col projects">
+              <div class="project-list">
+                <p>Nadal</p>
+                <p>Thiem</p>
+                <p>Federer</p>
+                <p>Djokovic</p>
+                <p>Medvedev</p>
+              </div>
+              <div class="h-stripe"><span>22</span></div>
+            </div>
+            <div class="col circle-text flex-center">
+              <div class="text">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 100 100"
+                  width="200"
+                  height="200"
+                >
+                  <defs>
+                    <path
+                      id="circle"
+                      d="M 50, 50 m -37, 0 a 37, 37 0 1, 1 74, 0 a 37, 37 0 1, 1 -74 0"
+                    />
+                  </defs>
+                  <text font-size="14" font-family="Arial">
+                    <textPath xlink:href="#circle">
+                      Votre texte à afficher en cercle
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
