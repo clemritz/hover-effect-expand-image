@@ -173,3 +173,37 @@ a {
   z-index: 2;
 }
 
+.loader-wrapper {
+  position: relative;
+  width: 5px;
+  height: 100px;
+  background: rgba(240, 240, 240, 0.25);
+  overflow: hidden;
+  transform: rotate(40deg);
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  width: 120%;
+  height: 120%;
+  background: var(--bg);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  .h1-revealer, .p-revealer, .logo-revealer, .contact-revealer {
+    display: none;
+  }
+
+  .hero > div {
+    padding: 8rem 4rem 2rem 4rem;
+  }
+}
