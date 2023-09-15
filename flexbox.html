@@ -88,5 +88,45 @@
       </div>
     </div>
     <div class="bubbles"></div>
+    <script>
+      let pageRevealDelay = 2;
+
+      gsapa.from(".logo a, .contact a", 1.5, {
+        top: "25px",
+        ease: "power4.inOut",
+        stagger: {
+          amount: 0.1,
+        },
+        delay: pageRevealDelay,
+      });
+
+      gsap.from(
+        "h1",
+        1.5,
+        {
+          y: 150,
+          ease: "power4.inOut",
+          stagger: {
+            amount: 0.1,
+          },
+        },
+        "<"
+      );
+
+      gsap.from(
+        "p",
+        1.75,
+        {
+          y: 30,
+          ease: "power3.inOut",
+          stagger: {
+            amount: 0.25,
+          },
+        },
+        "<"
+      );
+
+    
+    </script>
   </body>
 </html>
