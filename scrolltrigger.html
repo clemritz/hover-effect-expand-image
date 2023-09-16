@@ -21,20 +21,44 @@
     </footer>
     <div class="slider">
       <div class="slide" id="slide-1">
-        <img src="./images/img-scrolltrigger-1.avif" class="slide-img" alt="">
+        <img src="./images/img-scrolltrigger-1.avif" class="slide-img" alt="" />
       </div>
       <div class="slide" id="slide-1">
-        <img src="./images/img-scrolltrigger-2.avif" class="slide-img" alt="">
+        <img src="./images/img-scrolltrigger-2.avif" class="slide-img" alt="" />
       </div>
       <div class="slide" id="slide-1">
-        <img src="./images/img-scrolltrigger-3.avif" class="slide-img" alt="">
+        <img src="./images/img-scrolltrigger-3.avif" class="slide-img" alt="" />
       </div>
       <div class="slide" id="slide-1">
-        <img src="./images/img-scrolltrigger-4.avif" class="slide-img" alt="">
+        <img src="./images/img-scrolltrigger-4.avif" class="slide-img" alt="" />
       </div>
       <div class="slide" id="slide-1">
-        <img src="./images/img-scrolltrigger-5.avif" class="slide-img" alt="">
+        <img src="./images/img-scrolltrigger-5.avif" class="slide-img" alt="" />
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const totalSlides = 5;
+        const sectionHeight =
+          (document.body.scrollHeight - window.innerHeight) / totalSlides;
+
+        const slides = document.querySelectorAll('.slide');
+
+        slides.Each((slide, index) => {
+          gsap.to(slide, {
+            zIndex: (progress) => {
+              return progress < 0.5 ? 1 : 5 - index;
+            },
+            scrollTrigger: {
+              start: sectionHeight * index + " top",
+              end: sectionHeight * (index + 1) + " top",
+              scrub: 1,
+            },
+          });
+
+      
+        })
+      });
+    </script>
   </body>
 </html>
