@@ -42,7 +42,7 @@
         const sectionHeight =
           (document.body.scrollHeight - window.innerHeight) / totalSlides;
 
-        const slides = document.querySelectorAll('.slide');
+        const slides = document.querySelectorAll(".slide");
 
         slides.Each((slide, index) => {
           gsap.to(slide, {
@@ -56,8 +56,38 @@
             },
           });
 
-      
-        })
+          gsap.fromTo(
+            slide,
+            {
+              scale: index === 0 ? 1 : 0,
+            },
+            {
+              scale: 1,
+              scrollTrigger: {
+                start: sectionHeight * index + " top",
+                end: sectionHeight * (index + 1) + " top",
+                scrub: 1,
+              },
+            }
+          );
+
+          if (index !== 0) {
+            gsap.fromTo(
+              slide.querySelector(".slide-img"),
+              {
+                scale: 2,
+              },
+              {
+                scale: 1,
+                scrollTrigger: {
+                  start: sectionHeight * index + " top",
+                  end: sectionHeight * (index + 1) + " top",
+                  scrub: 1,
+                },
+              }
+            );
+          }
+        });
       });
     </script>
   </body>
