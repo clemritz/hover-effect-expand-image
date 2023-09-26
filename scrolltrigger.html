@@ -37,6 +37,8 @@
       </div>
     </div>
     <script>
+      ScrollTrigger.init();
+
       document.addEventListener("DOMContentLoaded", function () {
         const totalSlides = 5;
         const sectionHeight =
@@ -88,6 +90,7 @@
             );
           }
         });
+        ScrollTrigger.refresh();
       });
     </script>
   </body>
